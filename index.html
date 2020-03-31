@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>网络请求封装</title>
+</head>
+<h1>在控制台中查看结果</h1>
+
+<body>
+    <script src="./js/jquery-1.9.1.min.js"></script>
+    <script src="./js/request.js"></script>
+    <script>
+        // 调用请求 POST方式
+        function _init() {
+            post('/api/shoppingcart/v1/getsum/1001', {
+                accountId: "261539"
+            }).then(res => {
+                console.log("POST请求成功：", res)
+            }).catch(err => {
+                console.log("POST请求失败：", err)
+            })
+        }
+        _init();
+    </script>
+</body>
+
+</html>
